@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+ <!--Google Fonts-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Cotizador de Crédito</title>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <h1>Cotizador de Crédito</h1>
+
+        <!-- Loan Type -->
+        <label for="loan-type">Tipo de Crédito:</label>
+        <select id="loan-type" onchange="updateLoanTerms()">
+            <!-- Loan types will be populated dynamically using JavaScript -->
+        </select>
+
+        <!-- Loan Amount -->
+        <label for="loan-amount">Cantidad:</label>
+        <input type="number" id="loan-amount" placeholder="Ingrese la cantidad deseada">
+
+        <!-- Loan Term -->
+        <label for="loan-term">Plazo:</label>
+        <select id="loan-term"></select>
+
+        <!-- Payment Method -->
+        <label for="payment-method">Método de Pago:</label>
+        <select id="payment-method">
+            <option value="semanal">Semanal</option>
+            <option value="quincenal">Quincenal</option>
+            <option value="mensual">Mensual</option>
+        </select>
+
+        <!-- Calculate Payment Button -->
+        <button onclick="calculatePayment()">Calcular Pago</button>
+
+        <!-- Results Section -->
+        <div id="results-container">
+            <!-- Results displayed dynamically using JavaScript -->
+        </div>
+
+        <!-- Generate Payment Table Button -->
+        <button id="generate-table-btn"
+onclick="generatePaymentTable()" style="display: none;">Generar Tabla
+de Pagos</button>
+
+        <!-- Download PDF Button -->
+        <button id="download-pdf-btn" onclick="downloadPDF()"
+style="display: none;">Descargar PDF</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
